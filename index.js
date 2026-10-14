@@ -11,7 +11,7 @@ const opayTimeoutMs = Number(process.env.OPAY_TIMEOUT_MS || 15000);
 const opayNgnRate = Number(process.env.OPAY_NGN_RATE || 1500);
 const opayMinimumAmount = Number(process.env.OPAY_MINIMUM_AMOUNT_NGN || 30000);
 
-app.use(cors({ origin: process.env.FRONTEND_ORIGIN || "http://localhost:5173" }));
+app.use(cors({ origin: process.env.FRONTEND_ORIGIN || "https://ecom99.vercel.app/" }));
 app.use(express.json());
 
 function requireOpayConfig() {
