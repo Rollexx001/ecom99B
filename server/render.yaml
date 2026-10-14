@@ -1,0 +1,32 @@
+services:
+  # Backend API Service
+  - type: web
+    name: e-commerce-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: OPAY_CREATE_URL
+        value: https://testapi.opaycheckout.com/api/v1/international/cashier/create
+      - key: OPAY_PUBLIC_KEY
+        value: OPAYPUB17895715483500.27507669120240186
+      - key: OPAY_MERCHANT_ID
+        value: 256626091607671
+      - key: OPAY_RETURN_URL
+        value: https://e-coomerce-rho.vercel.app/order/success
+      - key: OPAY_CALLBACK_URL
+        value: https://server-ay6p.onrender.com/api/payments/opay/callback
+      - key: OPAY_CANCEL_URL
+        value: https://e-coomerce-rho.vercel.app/checkout
+      - key: OPAY_EXPIRE_MINUTES
+        value: 30
+      - key: OPAY_TIMEOUT_MS
+        value: 15000
+      - key: OPAY_NGN_RATE
+        value: 1500
+      - key: OPAY_MINIMUM_AMOUNT_NGN
+        value: 30000
+      - key: FRONTEND_ORIGIN
+        value: https://e-coomerce-rho.vercel.app
